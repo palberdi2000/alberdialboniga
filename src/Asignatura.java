@@ -30,10 +30,6 @@ public class Asignatura {
 		this.horasCurso = horasCurso;
 	}
 
-	@Override
-	public String toString() {
-		return "Asignatura [nombre=" + nombre + ", horasCurso=" + horasCurso + "]";
-	}
 	
 	
 }

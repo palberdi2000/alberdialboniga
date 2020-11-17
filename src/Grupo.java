@@ -18,9 +18,6 @@ public class Grupo {
 		this.numGrupo = numGrupo;
 	}
 
-	@Override
-	public String toString() {
-		return "Grupo [numGrupo=" + numGrupo + "]";
-	}
+	
 	
 }

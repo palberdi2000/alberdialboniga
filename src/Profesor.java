@@ -20,10 +20,6 @@ public class Profesor extends Persona {
 		this.asigImpartida = asigImpartida;
 	}
 
-	@Override
-	public String toString() {
-		return "Profesor [asigImpartida=" + asigImpartida + "]";
-	}
 	
 	
 }
