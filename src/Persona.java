@@ -1,16 +1,30 @@
 
+/**
+ * Clase abstracta 
+ * 
+ * @author PabloAlberdi
+ * @author JulenAlboniga-menor
+ */
+
 public abstract class Persona {
 	private String nombre;
 	private String apellido;
 	private int telefono;
 	
-	 /*
-	  * Constructor vacio
-	  */
+	/**
+	 * Constructor vacio
+	 */
 	
 	public Persona(){
 		
 	}
+	
+	/**
+	 * Contructor
+	 * @param nombre nombre de la persona
+	 * @param apellido de la persona
+	 * @param telefono de la persona
+	 */
 	
 	public Persona(String nombre, String apellido, int telefono){
 		this.nombre=nombre;

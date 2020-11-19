@@ -1,5 +1,11 @@
 import java.util.ArrayList;
 
+/**
+ * 
+ * @author PabloALberdi
+ * @author JulenAlboniga-menor
+ *
+ */
 public class Grupo {
 	private int numGrupo;
 	private Alumno alumno;
@@ -7,10 +13,23 @@ public class Grupo {
 	private ArrayList<Alumno>lista_alumnos;
 	private Profesor profe;
 	
+	/**
+	 * Contructor vacio
+	 */
+	
 	public Grupo() {
 		this.lista_alumnos=new ArrayList<Alumno>();
 	}
 
+	/**
+	 * 
+	 * @param numGrupo numero del grupo
+	 * @param alumno objeto Alumno
+	 * @param aula objeto Aula
+	 * @param lista_alumnos ArrayList de Alumnos
+	 * @param profe objeto Profesor
+	 */
+	
 	public Grupo(int numGrupo, Alumno alumno, Aula aula, ArrayList<Alumno> lista_alumnos, Profesor profe) {
 		super();
 		this.numGrupo = numGrupo;
@@ -60,12 +79,23 @@ public class Grupo {
 		this.profe = profe;
 	}
 
+	/**
+	 * 
+	 * @param a Alumno creado
+	 * Metodo para añadir alumno al grupo
+	 */
+	
 	public void anyadirAlumno(Alumno a)
 	{
 		{
 			lista_alumnos.add(a);
 		}
 	}
+	
+	/**
+	 * Metodo para añadir al Profesor 
+	 * @param p objeto Profesor
+	 */
 	
 	public void anyadirProfesor(Profesor p)
 	{

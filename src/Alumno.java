@@ -1,7 +1,7 @@
 /**
- * Clase Alumno. 
- * @author Pablo Alberdi
- * @author Julen Alboniga-menor
+ * Clase Alumno hereda de Persona. 
+ * @author PabloAlberdi
+ * @author JulenAlboniga-menor
  *
  */
 public class Alumno extends Persona{
@@ -9,15 +9,30 @@ public class Alumno extends Persona{
 	private int numeroFaltas;
 	private int nota;
 	
+	/**
+	 * Contructor vacio
+	 */
+	
 	public Alumno() {
 		
 	}
+	
+	/**
+	 * 
+	 * @param nombre del objeto Persona
+	 * @param apellido del objeto Persona
+	 * @param telefono del objeto Persona
+	 * @param asigMatriculada Asignaturas que va a cursar
+	 * @param numeroFaltas número de veces que no ha asistido a clase
+	 * @param nota calificación del Alumno
+	 */
 	
 	public Alumno(String nombre,String apellido,int telefono,String asigMatriculada, int numeroFaltas, int nota) {
 		this.asigMatriculada=asigMatriculada;
 		this.numeroFaltas=numeroFaltas;
 		this.nota=nota;
 	}
+	
 
 	public String getAsigMatriculada() {
 		return asigMatriculada;

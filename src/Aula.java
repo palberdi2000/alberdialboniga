@@ -1,11 +1,28 @@
 
+/**
+ * 
+ * @author PabloAlberdi
+ * @author JulenAlboniga-menor
+ *
+ */
+
 public class Aula {
 	private int numAula;
 	private int capacidad;
 	
+	/**
+	 * Constructor vacio
+	 */
+	
 	public Aula() {
 		
 	}
+	
+	/**
+	 * 
+	 * @param numAula numero del Aula
+	 * @param capacidad numero de personas que entran
+	 */
 	
 	public Aula(int numAula,int capacidad) {
 		this.capacidad=capacidad;
@@ -27,7 +44,13 @@ public class Aula {
 	public void setCapacidad(int capacidad) {
 		this.capacidad = capacidad;
 	}
-		
+	
+	/**
+	 * Si la capacidad es mayor a la del aula salta excepcion
+	 * 
+	 * @throws Exception
+	 */
+	
 	public void capacidadClase() throws Exception
 	{
 		if(capacidad>=15)
