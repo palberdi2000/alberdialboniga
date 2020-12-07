@@ -1,3 +1,4 @@
+package Clases;
 /**
  * Clase Alumno hereda de Persona. 
  * @author PabloAlberdi
@@ -5,6 +6,7 @@
  *
  */
 public class Alumno extends Persona{
+	private int idAlumno;
 	private String asigMatriculada;
 	private int numeroFaltas;
 	private int nota;
@@ -17,6 +19,14 @@ public class Alumno extends Persona{
 		
 	}
 	
+	
+	public Alumno(int idAlumno, String nombre, String apellido) {
+		super(nombre, apellido, 0);
+		this.idAlumno = idAlumno;
+	}
+
+
+
 	/**
 	 * 
 	 * @param nombre del objeto Persona
@@ -28,6 +38,7 @@ public class Alumno extends Persona{
 	 */
 	
 	public Alumno(String nombre,String apellido,int telefono,String asigMatriculada, int numeroFaltas, int nota) {
+		super(nombre, apellido, telefono);
 		this.asigMatriculada=asigMatriculada;
 		this.numeroFaltas=numeroFaltas;
 		this.nota=nota;

@@ -1,3 +1,4 @@
+package Clases;
 
 /**
  * Clase que hereda de Persona
