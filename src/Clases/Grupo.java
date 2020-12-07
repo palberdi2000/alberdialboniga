@@ -13,6 +13,7 @@ public class Grupo {
 	private Aula aula;
 	private ArrayList<Alumno>lista_alumnos;
 	private Profesor profe;
+	private ArrayList<Profesor>arrayProfe;
 	
 	/**
 	 * Contructor vacio
@@ -20,6 +21,7 @@ public class Grupo {
 	
 	public Grupo() {
 		this.lista_alumnos=new ArrayList<Alumno>();
+		this.arrayProfe= new ArrayList<Profesor>();
 	}
 
 	/**
@@ -31,13 +33,14 @@ public class Grupo {
 	 * @param profe objeto Profesor
 	 */
 	
-	public Grupo(int numGrupo, Alumno alumno, Aula aula, ArrayList<Alumno> lista_alumnos, Profesor profe) {
+	public Grupo(int numGrupo, Alumno alumno, Aula aula, ArrayList<Alumno> lista_alumnos, Profesor profe,ArrayList<Profesor>arrayProfe) {
 		super();
 		this.numGrupo = numGrupo;
 		this.alumno = alumno;
 		this.aula = aula;
 		this.lista_alumnos = lista_alumnos;
 		this.profe=profe;
+		this.arrayProfe=arrayProfe;
 	}
 
 	public int getNumGrupo() {
@@ -79,6 +82,15 @@ public class Grupo {
 	public void setProfe(Profesor profe) {
 		this.profe = profe;
 	}
+	
+
+	public ArrayList<Profesor> getArrayProfe() {
+		return arrayProfe;
+	}
+
+	public void setArrayProfe(ArrayList<Profesor> arrayProfe) {
+		this.arrayProfe = arrayProfe;
+	}
 
 	/**
 	 * 
@@ -88,9 +100,9 @@ public class Grupo {
 	
 	public void anyadirAlumno(Alumno a)
 	{
-		{
+		
 			lista_alumnos.add(a);
-		}
+		
 	}
 	
 	/**
@@ -100,6 +112,6 @@ public class Grupo {
 	
 	public void anyadirProfesor(Profesor p)
 	{
-		
+		arrayProfe.add(p);
 	}
 }

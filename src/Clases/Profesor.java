@@ -1,5 +1,3 @@
-<<<<<<< HEAD:src/Profesor.java
-=======
 package Clases;
 
 /**
@@ -48,4 +46,3 @@ public class Profesor extends Persona {
 	
 	
 }
->>>>>>> 22112f18ead8354067a853948232a8ea541069e9:src/Clases/Profesor.java

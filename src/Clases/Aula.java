@@ -52,11 +52,14 @@ public class Aula {
 	 * @throws Exception
 	 */
 	
-	public void capacidadClase() throws Exception
+	public boolean capacidadClase() throws Exception
 	{
+		
 		if(capacidad>=15)
 		{
 			throw new Exception();
+		}else {
+			return true;
 		}
 		
 	}
