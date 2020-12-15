@@ -112,6 +112,7 @@ public class GestorBD {
 		}
     	return correcto;
     }
+    
     public static ArrayList<Alumno> getAlumnos() {
     	Statement stmt;
     	ArrayList<Alumno> alumnos = new ArrayList<>();
@@ -127,6 +128,7 @@ public class GestorBD {
 		}
 		return alumnos;
     }
+    
     public static ArrayList<Alumno> getAlumnosPorGrupo(int grupo) {
     	PreparedStatement pstmt;
     	ArrayList<Alumno> alumnos = new ArrayList<>();
