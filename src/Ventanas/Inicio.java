@@ -11,17 +11,18 @@ import java.awt.Color;
 import javax.swing.JButton;
 import java.awt.event.ActionListener;
 import java.awt.event.ActionEvent;
+import javax.swing.JLabel;
 
 public class Inicio extends JFrame {
 
 	private JPanel contentPane;
-	private JTextField txtBienvenidoALa;
 	private JButton btnNewButton_1;
+	private JLabel txtBienvenida;
 
 	/**
 	 * Launch the application.
 	 */
-	public static void main(String[] args) {
+	public static void Inicio() {
 		EventQueue.invokeLater(new Runnable() {
 			public void run() {
 				try {
@@ -45,20 +46,14 @@ public class Inicio extends JFrame {
 		setContentPane(contentPane);
 		contentPane.setLayout(null);
 		
-		txtBienvenidoALa = new JTextField();
-		txtBienvenidoALa.setBackground(Color.ORANGE);
-		txtBienvenidoALa.setText("BIENVENIDO A LA ACADEMIA");
-		txtBienvenidoALa.setBounds(120, 25, 195, 26);
-		contentPane.add(txtBienvenidoALa);
-		txtBienvenidoALa.setColumns(10);
-		
 		JButton btnNewButton = new JButton("Iniciar sesion");
 		btnNewButton.setBackground(Color.GRAY);
 		btnNewButton.addActionListener(new ActionListener() {
 			public void actionPerformed(ActionEvent arg0) {
+			
 				Login login=new Login();
-				setVisible(false);
 				login.setVisible(true);
+				Inicio.this.dispose();
 			}
 		});
 		btnNewButton.setBounds(62, 112, 117, 29);
@@ -73,5 +68,10 @@ public class Inicio extends JFrame {
 		});
 		btnNewButton_1.setBounds(270, 112, 117, 29);
 		contentPane.add(btnNewButton_1);
+		
+		txtBienvenida = new JLabel("BIENVENIDO A LA ACADEMIA");
+		txtBienvenida.setBackground(Color.RED);
+		txtBienvenida.setBounds(131, 51, 194, 16);
+		contentPane.add(txtBienvenida);
 	}
 }

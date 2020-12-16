@@ -6,9 +6,13 @@ import java.awt.EventQueue;
 import javax.swing.JFrame;
 import javax.swing.JPanel;
 import javax.swing.border.EmptyBorder;
+
+import Clases.GestorBD;
+
 import javax.swing.JTextField;
 import java.awt.Color;
 import javax.swing.JLabel;
+import javax.swing.JOptionPane;
 import javax.swing.JPasswordField;
 import javax.swing.JButton;
 import java.awt.event.ActionListener;
@@ -18,26 +22,11 @@ public class Login extends JFrame {
 
 	private JPanel contentPane;
 	private JTextField textField;
-	private JTextField textField_1;
-	private JTextField textField_2;
 	private JPasswordField passwordField;
 	private JButton btnNewButton_1;
+	private JTextField txtUsuario;
+	private JLabel CONTRASEÑA;
 
-	/**
-	 * Launch the application.
-	 */
-	public static void main(String[] args) {
-		EventQueue.invokeLater(new Runnable() {
-			public void run() {
-				try {
-					Login frame = new Login();
-					frame.setVisible(true);
-				} catch (Exception e) {
-					e.printStackTrace();
-				}
-			}
-		});
-	}
 
 	/**
 	 * Create the frame.
@@ -56,16 +45,6 @@ public class Login extends JFrame {
 		contentPane.add(textField);
 		textField.setColumns(10);
 		
-		textField_1 = new JTextField("USUARIO:");
-		textField_1.setBounds(29, 86, 130, 26);
-		contentPane.add(textField_1);
-		textField_1.setColumns(10);
-		
-		textField_2 = new JTextField("CONTRASEÑA:");
-		textField_2.setBounds(29, 164, 130, 26);
-		contentPane.add(textField_2);
-		textField_2.setColumns(10);
-		
 		passwordField = new JPasswordField();
 		passwordField.setBounds(195, 164, 97, 26);
 		contentPane.add(passwordField);
@@ -80,7 +59,37 @@ public class Login extends JFrame {
 		contentPane.add(btnNewButton);
 		
 		btnNewButton_1 = new JButton("ACCEDER");
+		btnNewButton_1.addActionListener(new ActionListener() {
+			public void actionPerformed(ActionEvent arg0) {
+				String usuarioIntro = txtUsuario.getText();
+				String contraIntro = passwordField.getText();
+				boolean usuarioCorrecto = GestorBD.comprobarContrasena(usuarioIntro, contraIntro);
+				if(usuarioCorrecto)
+				{
+					MenuPrincipal pantalla = new MenuPrincipal();
+					pantalla.setVisible(true);
+					Login.this.dispose();
+				}
+				else
+				{
+					JOptionPane.showMessageDialog(Login.this, "Usuario o contraseña incorrectos");
+				}
+			}
+		});
 		btnNewButton_1.setBounds(186, 237, 117, 29);
 		contentPane.add(btnNewButton_1);
+		
+		txtUsuario = new JTextField();
+		txtUsuario.setBounds(145, 86, 130, 26);
+		contentPane.add(txtUsuario);
+		txtUsuario.setColumns(10);
+		
+		JLabel EMAIL = new JLabel("EMAIL:");
+		EMAIL.setBounds(75, 91, 61, 16);
+		contentPane.add(EMAIL);
+		
+		CONTRASEÑA = new JLabel("CONTRASEÑA:");
+		CONTRASEÑA.setBounds(75, 169, 61, 16);
+		contentPane.add(CONTRASEÑA);
 	}
 }

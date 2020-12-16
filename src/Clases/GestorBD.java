@@ -59,7 +59,7 @@ public class GestorBD {
     /**
      * @param args the command line arguments
      */
-    public static void main(String[] args) {
+    public static void conectar() {
     	try {
 			conn = DriverManager.getConnection(url);
 		} catch (SQLException e) {
@@ -102,8 +102,8 @@ public class GestorBD {
     	PreparedStatement pstmt;
 		try {
 			pstmt = conn.prepareStatement("SELECT * FROM USUARIO WHERE EMAIL = ? AND PASSWORD = ?");
-			pstmt.setString(0, email);
-			pstmt.setString(1, password);
+			pstmt.setString(1, email);
+			pstmt.setString(2, password);
 			ResultSet res = pstmt.executeQuery();
 			correcto = res.first();
 		} catch (SQLException e) {
