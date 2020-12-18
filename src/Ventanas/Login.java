@@ -25,7 +25,7 @@ public class Login extends JFrame {
 	private JPasswordField passwordField;
 	private JButton btnNewButton_1;
 	private JTextField txtUsuario;
-	private JLabel CONTRASEÑA;
+	private JLabel CONTRASENA;
 
 
 	/**
@@ -88,8 +88,8 @@ public class Login extends JFrame {
 		EMAIL.setBounds(75, 91, 61, 16);
 		contentPane.add(EMAIL);
 		
-		CONTRASEÑA = new JLabel("CONTRASEÑA:");
-		CONTRASEÑA.setBounds(75, 169, 61, 16);
-		contentPane.add(CONTRASEÑA);
+		CONTRASENA = new JLabel("CONTRASENA:");
+		CONTRASENA.setBounds(75, 169, 61, 16);
+		contentPane.add(CONTRASENA);
 	}
 }
