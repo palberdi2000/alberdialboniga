@@ -16,12 +16,13 @@ import javax.swing.DefaultListModel;
 import javax.swing.JButton;
 import javax.swing.JTextField;
 import javax.swing.JList;
+import java.awt.event.ActionListener;
+import java.awt.event.ActionEvent;
 
 public class VentanaMostrarGrupo extends JFrame {
 
 	private JPanel contentPane;
 	private JTextField txtNumGrupo;
-	private ArrayList<Alumno>listaAlumnos;
 
 	/**
 	 * Launch the application.
@@ -43,7 +44,6 @@ public class VentanaMostrarGrupo extends JFrame {
 	 * Create the frame.
 	 */
 	public VentanaMostrarGrupo() {
-		cargarLista();
 		
 		setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
 		setBounds(100, 100, 450, 300);
@@ -61,21 +61,31 @@ public class VentanaMostrarGrupo extends JFrame {
 		contentPane.add(txtNumGrupo);
 		txtNumGrupo.setColumns(10);
 		
-		DefaultListModel<String>model = new DefaultListModel<String>();
-		for (int i = 0; i < listaAlumnos.size(); i++)
-		{
-			model.add(i, listaAlumnos.get(i).toString());
-		}
-		
-		JList listAlumGrupo = new JList(model);
+		final JList listAlumGrupo = new JList();
 		listAlumGrupo.setBounds(79, 75, 288, 161);
 		contentPane.add(listAlumGrupo);
 		
-	}
-	
-	public void cargarLista()
-	{
-		int grupo = Integer.parseInt(txtNumGrupo.getText());
-		listaAlumnos = GestorBD.getAlumnosPorGrupo(grupo);
+		JButton btnMostrar = new JButton("Mostrar");
+		btnMostrar.addActionListener(new ActionListener() {
+			public void actionPerformed(ActionEvent e) {
+				String text = txtNumGrupo.getText();
+				if(text.equals("")) {
+					//Rellenalo ostia
+				} else {
+					int grupo = Integer.parseInt(text);
+					ArrayList<Alumno> listaAlumnos = GestorBD.getAlumnosPorGrupo(grupo);
+					DefaultListModel<String> model = new DefaultListModel<String>();
+					for (int i = 0; i < listaAlumnos.size(); i++)
+					{
+						model.add(i, listaAlumnos.get(i).toString());
+						System.out.println(listaAlumnos.get(i).toString());
+					}
+					listAlumGrupo.setModel(model);
+				}
+			}
+		});
+		btnMostrar.setBounds(287, 22, 115, 29);
+		contentPane.add(btnMostrar);
+		
 	}
 }

@@ -16,7 +16,7 @@ import java.util.ArrayList;
  */
 public class GestorBD {
 	
-	private static String db = "BarLink.db";
+	private static String db = "Academia.db";
     private static String url = "jdbc:sqlite:" + db;
     private static Connection conn;
 
@@ -90,7 +90,7 @@ public class GestorBD {
 			pstmt = conn.prepareStatement("SELECT * FROM USUARIO WHERE EMAIL = ?");
 			pstmt.setString(0, email);
 			ResultSet res = pstmt.executeQuery();
-			existe = res.first();
+			existe = res.next();
 		} catch (SQLException e) {
 			// TODO Auto-generated catch block
 			e.printStackTrace();
@@ -105,7 +105,7 @@ public class GestorBD {
 			pstmt.setString(1, email);
 			pstmt.setString(2, password);
 			ResultSet res = pstmt.executeQuery();
-			correcto = res.first();
+			correcto = res.next();
 		} catch (SQLException e) {
 			// TODO Auto-generated catch block
 			e.printStackTrace();
@@ -133,8 +133,8 @@ public class GestorBD {
     	PreparedStatement pstmt;
     	ArrayList<Alumno> alumnos = new ArrayList<>();
 		try {
-			pstmt = conn.prepareStatement("SELECT * FROM ALUMNO WHERE ID_ALUMNO IN (SELECT ID_ALUMNO FROM GRUPO_ALUMNO WHERE ID_GRUPO = ?)");
-			pstmt.setInt(0, grupo);
+			pstmt = conn.prepareStatement("SELECT * FROM ALUMNO WHERE ID_ALUMNO IN (SELECT ID_ALUMNO FROM ALUMNO_GRUPO WHERE ID_GRUPO = ?)");
+			pstmt.setInt(1, grupo);
 			ResultSet res = pstmt.executeQuery();
 			while (res.next()) {
 				alumnos.add(new Alumno(res.getInt("ID_ALUMNO"), res.getString("NOMBRE"), res.getString("APELLIDO")));

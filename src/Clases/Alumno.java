@@ -81,6 +81,12 @@ public class Alumno extends Persona{
 			return true;
 		}
 	}
+
+
+	@Override
+	public String toString() {
+		return super.getNombre() + " " + super.getApellido();
+	}
 	
 	
 }
