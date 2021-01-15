@@ -3,6 +3,12 @@ package Clases;
 import Threads.ThreadInicio;
 import Ventanas.Login;
 
+/**
+ * 
+ * @author Pablo Alberdi
+ * @author Julen Alboniga-menor
+ */
+
 public class ProgramaPrincipal {
 
 	public static void main(String[] args) 

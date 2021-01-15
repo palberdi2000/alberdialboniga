@@ -28,19 +28,19 @@ public class GestorBD {
 
         try (Statement stmt = conn.createStatement()) {
 
-            String cr1 = "CREATE TABLE ALUMNO(ID_ALUMNO INTEGER NOT NULL PRIMARY KEY, NOMBRE TEXT NOT NULL, APELLIDO TEXT NOT NULL, CURSO TEXT NOT NULL)";
+            String cr1 = "CREATE TABLE IF NOT EXISTS ALUMNO(ID_ALUMNO INTEGER NOT NULL PRIMARY KEY, NOMBRE TEXT NOT NULL, APELLIDO TEXT NOT NULL, CURSO TEXT NOT NULL)";
       	
-            String cr2 = "CREATE TABLE PROFESOR(ID_PROFESOR INTEGER NOT NULL PRIMARY KEY, NOMBRE TEXT NOT NULL, APELLIDO TEXT NOT NULL)";
+            String cr2 = "CREATE TABLE IF NOT EXISTS PROFESOR(ID_PROFESOR INTEGER NOT NULL PRIMARY KEY, NOMBRE TEXT NOT NULL, APELLIDO TEXT NOT NULL)";
 
-            String cr3 = "CREATE TABLE AULA(ID_AULA INTEGER NOT NULL PRIMARY KEY, NOMBRE TEXT NOT NULL, CAPACIDAD INTEGER NOT NULL)";
+            String cr3 = "CREATE TABLE IF NOT EXISTS AULA(ID_AULA INTEGER NOT NULL PRIMARY KEY, NOMBRE TEXT NOT NULL, CAPACIDAD INTEGER NOT NULL)";
 
-            String cr4 = "CREATE TABLE ASIGNATURA(ID_ASIGNATURA INTEGER NOT NULL PRIMARY KEY, NOMBRE TEXT NOT NULL)";
+            String cr4 = "CREATE TABLE IF NOT EXISTS ASIGNATURA(ID_ASIGNATURA INTEGER NOT NULL PRIMARY KEY, NOMBRE TEXT NOT NULL)";
 
-            String cr5 = "CREATE TABLE ALUMNO_GRUPO(ID_ALUMNO INTEGER NOT NULL, ID_GRUPO INTEGER NOT NULL)";
+            String cr5 = "CREATE TABLE IF NOT EXISTS ALUMNO_GRUPO(ID_ALUMNO INTEGER NOT NULL, ID_GRUPO INTEGER NOT NULL)";
             
-            String cr6 = "CREATE TABLE GRUPO(ID_GRUPO INTEGER NOT NULL PRIMARY KEY, ID_PROFESOR INTEGER NOT NULL, ID_AULA INTEGER NOT NULL, ID_ASIGNATURA INTEGER NOT NULL)";   
+            String cr6 = "CREATE TABLE IF NOT EXISTS GRUPO(ID_GRUPO INTEGER NOT NULL PRIMARY KEY, ID_PROFESOR INTEGER NOT NULL, ID_AULA INTEGER NOT NULL, ID_ASIGNATURA INTEGER NOT NULL)";   
             
-            String cr7 = "CREATE TABLE USUARIO(EMAIL TEXT NOT NULL PRIMARY KEY, PASSWORD TEXT NOT NULL)";
+            String cr7 = "CREATE TABLE IF NOT EXISTS USUARIO(EMAIL TEXT NOT NULL PRIMARY KEY, PASSWORD TEXT NOT NULL)";
 
             // Create a the tables
             stmt.execute(cr1);
@@ -83,6 +83,13 @@ public class GestorBD {
 		}
     	return operacionCompletada;
     }
+    
+    /**
+     * 
+     * @param email direccion de correo del usuario
+     * @return boolean de si se encuentra en la base
+     */
+    
     public static boolean existeUsuario(String email) {
     	boolean existe = false;
     	PreparedStatement pstmt;
@@ -97,6 +104,13 @@ public class GestorBD {
 		}
     	return existe;
     }
+    /**
+     * 
+     * @param email direccion de correo del usuario
+     * @param password contraseña del usuario
+     * @return si ambas son correctas true
+     */
+    
     public static boolean comprobarContrasena(String email, String password) {
     	boolean correcto = false;
     	PreparedStatement pstmt;
@@ -113,6 +127,11 @@ public class GestorBD {
     	return correcto;
     }
     
+    /**
+     * 
+     * @return ArrayList de alumnos
+     */
+    
     public static ArrayList<Alumno> getAlumnos() {
     	Statement stmt;
     	ArrayList<Alumno> alumnos = new ArrayList<>();
@@ -128,6 +147,12 @@ public class GestorBD {
 		}
 		return alumnos;
     }
+    
+    /**
+     * 
+     * @param grupo id del grupo solicitado
+     * @return ArrayList de alumnos
+     */
     
     public static ArrayList<Alumno> getAlumnosPorGrupo(int grupo) {
     	PreparedStatement pstmt;

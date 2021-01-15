@@ -1,8 +1,13 @@
 package Clases;
 
 import java.util.ArrayList;
+/**
+ * 
+ * @author Pablo Alberdi
+ * @author Julen Alboniga-menor
+ */
 
-public class Mergesort {
+public class Mergesort {								//MERGESORT
 	public static <T extends IComparable> ArrayList<T> mergesort(ArrayList<T> array) {
 		if(array.size() == 1) {
 			return array;
@@ -15,6 +20,15 @@ public class Mergesort {
 		
 		return merge(leftArray, rightArray);
 	}
+
+/**
+ * 
+ * @param <T> Metodo generico
+ * @param leftArray parte izquierda del array
+ * @param rightArray parte derecha del array
+ * @return array ordenado
+ */
+	
 	private static <T extends IComparable> ArrayList<T> merge(ArrayList<T> leftArray, ArrayList<T> rightArray) {
 		ArrayList<T> array = new ArrayList<>();
 		while (leftArray.size() != 0 && rightArray.size() != 0) {

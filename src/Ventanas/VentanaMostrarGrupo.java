@@ -22,6 +22,12 @@ import javax.swing.JOptionPane;
 import java.awt.event.ActionListener;
 import java.awt.event.ActionEvent;
 
+/**
+ * 
+ * @author Pablo Alberdi
+ * @author Julen Alboniga-menor
+ *
+ */
 public class VentanaMostrarGrupo extends JFrame {
 
 	private JPanel contentPane;
@@ -69,7 +75,7 @@ public class VentanaMostrarGrupo extends JFrame {
 		contentPane.add(listAlumGrupo);
 		
 		JButton btnMostrar = new JButton("Mostrar");
-		btnMostrar.addActionListener(e -> {
+		btnMostrar.addActionListener(e -> {			//LAMBDA
 				String text = txtNumGrupo.getText();
 				if(text.equals("")) {
 					JOptionPane("RELLENE TEXTO");

@@ -18,18 +18,27 @@ import javax.swing.JButton;
 import java.awt.event.ActionListener;
 import java.awt.event.ActionEvent;
 
+/**
+ * 
+ * @author Pablo Alberdi
+ * @author Julen Alboniga-menor
+ *
+ */
 public class Login extends JFrame {
-
+	
+	/**
+	 * Atributos de la ventana
+	 */
 	private JPanel contentPane;
-	private JTextField textField;
 	private JPasswordField passwordField;
 	private JButton btnNewButton_1;
 	private JTextField txtUsuario;
 	private JLabel CONTRASENA;
+	private JLabel lblNewLabel;
 
 
 	/**
-	 * Create the frame.
+	 * Distribucion de la ventana
 	 */
 	public Login() {
 		setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
@@ -39,14 +48,8 @@ public class Login extends JFrame {
 		setContentPane(contentPane);
 		contentPane.setLayout(null);
 		
-		textField = new JTextField("Inserte los dastos:");
-		textField.setBackground(Color.ORANGE);
-		textField.setBounds(130, 19, 145, 26);
-		contentPane.add(textField);
-		textField.setColumns(10);
-		
 		passwordField = new JPasswordField();
-		passwordField.setBounds(195, 164, 97, 26);
+		passwordField.setBounds(220, 164, 130, 26);
 		contentPane.add(passwordField);
 		
 		JButton btnNewButton = new JButton("SALIR");
@@ -59,7 +62,7 @@ public class Login extends JFrame {
 		contentPane.add(btnNewButton);
 		
 		btnNewButton_1 = new JButton("ACCEDER");
-		btnNewButton_1.addActionListener(e -> {
+		btnNewButton_1.addActionListener(e -> {							//LAMBDA
 				String usuarioIntro = txtUsuario.getText();
 				String contraIntro = passwordField.getText();
 				boolean usuarioCorrecto = GestorBD.comprobarContrasena(usuarioIntro, contraIntro);
@@ -78,7 +81,7 @@ public class Login extends JFrame {
 		contentPane.add(btnNewButton_1);
 		
 		txtUsuario = new JTextField();
-		txtUsuario.setBounds(145, 86, 130, 26);
+		txtUsuario.setBounds(220, 86, 130, 26);
 		contentPane.add(txtUsuario);
 		txtUsuario.setColumns(10);
 		
@@ -87,7 +90,11 @@ public class Login extends JFrame {
 		contentPane.add(EMAIL);
 		
 		CONTRASENA = new JLabel("CONTRASENA:");
-		CONTRASENA.setBounds(75, 169, 61, 16);
+		CONTRASENA.setBounds(53, 169, 97, 16);
 		contentPane.add(CONTRASENA);
+		
+		lblNewLabel = new JLabel("INSERTE LOS DATOS:");
+		lblNewLabel.setBounds(145, 20, 147, 16);
+		contentPane.add(lblNewLabel);
 	}
 }

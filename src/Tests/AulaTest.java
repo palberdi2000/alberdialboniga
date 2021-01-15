@@ -8,8 +8,16 @@ import org.junit.Test;
 import Clases.Alumno;
 import Clases.Aula;
 
+/**
+ * 
+ * @author Pablo Alberdi
+ * @author Julen Alboniga-menor
+ *
+ */
 public class AulaTest {
-	
+	/**
+	 * aula a testear
+	 */
 	private Aula aula1;
 		
 		@Before
@@ -22,7 +30,9 @@ public class AulaTest {
 				e.printStackTrace();
 			}
 		}
-	
+	/**
+	 * test realizado 
+	 */
 		@Test
 		public void comprobarCapacidad() {
 		try {

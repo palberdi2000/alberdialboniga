@@ -11,6 +11,12 @@ import javax.swing.border.EmptyBorder;
 import java.awt.event.ActionListener;
 import java.awt.event.ActionEvent;
 
+/**
+ * 
+ * @author Pablo Alberdi
+ * @author Julen Alboniga-menor
+ *
+ */
 public class MenuPrincipal extends JFrame {
 
 	private JPanel contentPane;
@@ -32,7 +38,7 @@ public class MenuPrincipal extends JFrame {
 	}
 
 	/**
-	 * Create the frame.
+	 * Distribucion de la ventana
 	 */
 	public MenuPrincipal() {
 		setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
@@ -58,6 +64,11 @@ public class MenuPrincipal extends JFrame {
 		contentPane.add(btnMostrarGrupo);
 		
 		JButton btnAlumado = new JButton("Listado de alumno");
+		btnAlumado.addActionListener(e -> {
+			MenuPrincipal.this.setVisible(false);
+			VentanaAlumnado a=new VentanaAlumnado(MenuPrincipal.this);
+			a.setVisible(true);
+		});
 		btnAlumado.setBounds(123, 110, 169, 29);
 		contentPane.add(btnAlumado);
 	}
