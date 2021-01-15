@@ -59,8 +59,7 @@ public class Login extends JFrame {
 		contentPane.add(btnNewButton);
 		
 		btnNewButton_1 = new JButton("ACCEDER");
-		btnNewButton_1.addActionListener(new ActionListener() {
-			public void actionPerformed(ActionEvent arg0) {
+		btnNewButton_1.addActionListener(e -> {
 				String usuarioIntro = txtUsuario.getText();
 				String contraIntro = passwordField.getText();
 				boolean usuarioCorrecto = GestorBD.comprobarContrasena(usuarioIntro, contraIntro);
@@ -74,7 +73,6 @@ public class Login extends JFrame {
 				{
 					JOptionPane.showMessageDialog(Login.this, "Usuario o contraseña incorrectos");
 				}
-			}
 		});
 		btnNewButton_1.setBounds(186, 237, 117, 29);
 		contentPane.add(btnNewButton_1);

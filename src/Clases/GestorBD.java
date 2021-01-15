@@ -38,7 +38,7 @@ public class GestorBD {
 
             String cr5 = "CREATE TABLE ALUMNO_GRUPO(ID_ALUMNO INTEGER NOT NULL, ID_GRUPO INTEGER NOT NULL)";
             
-            String cr6 = "CREATE TABLE GRUPO(ID_GRUPO INTEGER NOT NULL PRIMARY KEY, ID_ALUMNO INTEGER NOT NULL, ID_PROFESOR INTEGER NOT NULL, ID_AULA INTEGER NOT NULL, ID_ASIGNATURA INTEGER NOT NULL)";   
+            String cr6 = "CREATE TABLE GRUPO(ID_GRUPO INTEGER NOT NULL PRIMARY KEY, ID_PROFESOR INTEGER NOT NULL, ID_AULA INTEGER NOT NULL, ID_ASIGNATURA INTEGER NOT NULL)";   
             
             String cr7 = "CREATE TABLE USUARIO(EMAIL TEXT NOT NULL PRIMARY KEY, PASSWORD TEXT NOT NULL)";
 
@@ -88,7 +88,7 @@ public class GestorBD {
     	PreparedStatement pstmt;
 		try {
 			pstmt = conn.prepareStatement("SELECT * FROM USUARIO WHERE EMAIL = ?");
-			pstmt.setString(0, email);
+			pstmt.setString(1, email);
 			ResultSet res = pstmt.executeQuery();
 			existe = res.next();
 		} catch (SQLException e) {

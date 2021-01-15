@@ -10,12 +10,15 @@ import javax.swing.border.EmptyBorder;
 
 import Clases.Alumno;
 import Clases.GestorBD;
+import Clases.Mergesort;
 
 import javax.swing.JLabel;
 import javax.swing.DefaultListModel;
 import javax.swing.JButton;
 import javax.swing.JTextField;
 import javax.swing.JList;
+import javax.swing.JOptionPane;
+
 import java.awt.event.ActionListener;
 import java.awt.event.ActionEvent;
 
@@ -66,26 +69,29 @@ public class VentanaMostrarGrupo extends JFrame {
 		contentPane.add(listAlumGrupo);
 		
 		JButton btnMostrar = new JButton("Mostrar");
-		btnMostrar.addActionListener(new ActionListener() {
-			public void actionPerformed(ActionEvent e) {
+		btnMostrar.addActionListener(e -> {
 				String text = txtNumGrupo.getText();
 				if(text.equals("")) {
-					//Rellenalo ostia
+					JOptionPane("RELLENE TEXTO");
 				} else {
 					int grupo = Integer.parseInt(text);
 					ArrayList<Alumno> listaAlumnos = GestorBD.getAlumnosPorGrupo(grupo);
+					listaAlumnos = Mergesort.mergesort(listaAlumnos);
 					DefaultListModel<String> model = new DefaultListModel<String>();
 					for (int i = 0; i < listaAlumnos.size(); i++)
 					{
 						model.add(i, listaAlumnos.get(i).toString());
-						System.out.println(listaAlumnos.get(i).toString());
 					}
 					listAlumGrupo.setModel(model);
 				}
-			}
 		});
 		btnMostrar.setBounds(287, 22, 115, 29);
 		contentPane.add(btnMostrar);
+		
+	}
+
+	private void JOptionPane(String string) {
+		// TODO Auto-generated method stub
 		
 	}
 }

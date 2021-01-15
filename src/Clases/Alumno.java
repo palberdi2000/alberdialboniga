@@ -5,7 +5,7 @@ package Clases;
  * @author JulenAlboniga-menor
  *
  */
-public class Alumno extends Persona{
+public class Alumno extends Persona implements IComparable{
 	private int idAlumno;
 	private String asigMatriculada;
 	private int numeroFaltas;
@@ -86,6 +86,13 @@ public class Alumno extends Persona{
 	@Override
 	public String toString() {
 		return super.getNombre() + " " + super.getApellido();
+	}
+
+
+	@Override
+	public int value() {
+		// TODO Auto-generated method stub
+		return super.getApellido().toLowerCase().charAt(0);
 	}
 	
 	
