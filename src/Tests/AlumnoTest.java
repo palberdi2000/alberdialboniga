@@ -17,21 +17,27 @@ import Clases.Alumno;
  */
 public class AlumnoTest {
 	/**
-	 * Alumno a testear
+	 * Alumno sobre el que vamos a testear
 	 */
 	private Alumno alumno1;
 	
+	/*
+	 * Definimos el numero de faltas en el alumno
+	 */
 	@Before
 	public void setUp() {
 		this.alumno1 = new Alumno();
 		this.alumno1.setNumeroFaltas(6);
+		
+
 	}
 	/**
-	 * test realizado
+	 * testeo del metodo comprobaFaltas
 	 */
 	@Test
 	public void comprobarFaltas() {
 		assertEquals(false, this.alumno1.aviso());
 	}
+
 
 }

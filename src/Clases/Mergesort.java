@@ -22,7 +22,7 @@ public class Mergesort {								//MERGESORT
 	}
 
 /**
- * 
+ * Metodo recursivo mergesort para ordenar el listado que queramos mostrar en pantalla
  * @param <T> Metodo generico
  * @param leftArray parte izquierda del array
  * @param rightArray parte derecha del array

@@ -14,9 +14,15 @@ import javax.swing.JTextField;
 import javax.swing.JButton;
 import java.awt.event.ActionListener;
 import java.awt.event.ActionEvent;
-
+/**
+ * @author Pablo Alberdi
+ * @author Julen Alboniga-Menor
+ */
 public class VentanaNuevoAlumno extends JFrame {
-
+	/**
+	 * Atributos de la ventana
+	 */
+	
 	private JPanel contentPane;
 	private JTextField textNom;
 	private JTextField textApellido;
@@ -24,7 +30,7 @@ public class VentanaNuevoAlumno extends JFrame {
 	private JTextField textId;
 
 	/**
-	 * Create the frame.
+	 * Distribucion de la ventana
 	 */
 	public VentanaNuevoAlumno(JFrame MenuPrincipal) {
 		setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);

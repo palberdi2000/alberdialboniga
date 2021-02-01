@@ -43,51 +43,96 @@ public class Grupo {
 		this.arrayProfe=arrayProfe;
 	}
 
+	/**
+	 * Obtener el numero del grupo 
+	 * @return numGrupo
+	 */
 	public int getNumGrupo() {
 		return numGrupo;
 	}
-
+	
+	/**
+	 * Definir numero de grupo 
+	 */
 	public void setNumGrupo(int numGrupo) {
 		this.numGrupo = numGrupo;
 	}
-
+	/**
+	 * Obtener un alumno del grupo
+	 * @return alumno
+	 */
 	public Alumno getAlumno() {
 		return alumno;
 	}
-
+	
+	/**
+	 * Definir un alumno en el grupo
+	 */
 	public void setAlumno(Alumno alumno) {
 		this.alumno = alumno;
 	}
 
+	/**
+	 * Obtener el aula del grupo
+	 * @return aula
+	 */
 	public Aula getAula() {
 		return aula;
 	}
-
+	
+	/**
+	 * Definir aula del grupo
+	 */
+	
 	public void setAula(Aula aula) {
 		this.aula = aula;
 	}
-	
+	/**
+	 * Obtener el listado de alumnos del grupo
+	 * @return lista_alumnos
+	 */
 	public ArrayList<Alumno> getLista_alumnos() {
 		return lista_alumnos;
 	}
+	
+	/**
+	 * Definir el listado de alumnos
+	 */
 
 	public void setLista_alumnos(ArrayList<Alumno> lista_alumnos) {
 		this.lista_alumnos = lista_alumnos;
 	}
 
+	/**
+	 * Obtener el profesor del grupo
+	 * @return profe
+	 */
+	
 	public Profesor getProfe() {
 		return profe;
 	}
 
+	/**
+	 * Definir el profesor del grupo
+	 */
+	
 	public void setProfe(Profesor profe) {
 		this.profe = profe;
 	}
 	
+	/**
+	 * Obtener lista de profesor del grupo
+	 * @return arrayProfe
+	 */
 
 	public ArrayList<Profesor> getArrayProfe() {
 		return arrayProfe;
 	}
-
+	
+	/**
+	 * Definir lista de profesor del grupo
+	 */
+	
 	public void setArrayProfe(ArrayList<Profesor> arrayProfe) {
 		this.arrayProfe = arrayProfe;
 	}

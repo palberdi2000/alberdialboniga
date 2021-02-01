@@ -50,7 +50,7 @@ public class VentanaMostrarGrupo extends JFrame {
 	}
 
 	/**
-	 * Create the frame.
+	 * Distribucion de la ventana
 	 */
 	public VentanaMostrarGrupo() {
 		

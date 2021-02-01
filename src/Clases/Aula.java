@@ -20,7 +20,6 @@ public class Aula {
 	}
 	
 	/**
-	 * 
 	 * @param numAula numero del Aula
 	 * @param capacidad numero de personas que entran
 	 */
@@ -30,18 +29,33 @@ public class Aula {
 		this.numAula=numAula;
 	}
 
+	/*
+	 * Obtener el numero del aula
+	 */
 	public int getNumAula() {
 		return numAula;
 	}
+	
+	/*
+	 * Modificar el numero del aula
+	 */
 
 	public void setNumAula(int numAula) {
 		this.numAula = numAula;
 	}
+	
+	/*
+	 * Obtener la capacidad del aula
+	 */
 
 	public int getCapacidad() {
 		return capacidad;
 	}
 
+	/*
+	 * Definir la capacidad del aula
+	 */
+	
 	public void setCapacidad(int capacidad) {
 		this.capacidad = capacidad;
 	}

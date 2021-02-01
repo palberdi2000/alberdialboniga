@@ -9,7 +9,9 @@ import Clases.GestorBD;
  *
  */
 public class ThreadInicio extends Thread{
-	
+	/**
+	 * metodo que inicializa la base de datos
+	 */
 	public void run() {
 		GestorBD.conectar();
 	}

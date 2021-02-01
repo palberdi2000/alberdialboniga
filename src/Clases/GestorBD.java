@@ -85,7 +85,7 @@ public class GestorBD {
     }
     
     /**
-     * 
+     * Metodo para analizar si existe el usuario introducido
      * @param email direccion de correo del usuario
      * @return boolean de si se encuentra en la base
      */
@@ -105,7 +105,7 @@ public class GestorBD {
     	return existe;
     }
     /**
-     * 
+     * Metodo para comprobar si la contraseña introducida existe 
      * @param email direccion de correo del usuario
      * @param password contraseña del usuario
      * @return si ambas son correctas true
@@ -128,7 +128,7 @@ public class GestorBD {
     }
     
     /**
-     * 
+     * Metodo para obtener los alumnos de la academia
      * @return ArrayList de alumnos
      */
     
@@ -149,7 +149,7 @@ public class GestorBD {
     }
     
     /**
-     * 
+     * Metodo para mostrar los alumno del grupo solicitado
      * @param grupo id del grupo solicitado
      * @return ArrayList de alumnos
      */
@@ -170,7 +170,13 @@ public class GestorBD {
 		}
 		return alumnos;
     }
-    
+    /**
+     * Metodo para añadir un alumno a la base de datos 
+     * @param id del alumno nuevo
+     * @param nombre del alumno nuevo
+     * @param apellido del alumno nuevo
+     * @param curso que esta cursando
+     */
     public static void nuevoAlumno(int id,String nombre, String apellido, String curso) {
     	
     	try {

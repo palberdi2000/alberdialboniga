@@ -10,6 +10,10 @@ import Ventanas.Login;
  */
 
 public class ProgramaPrincipal {
+	
+	/**
+	 * Metodo main que llama al hilo ThreadInicio y inicializa el programa
+	 */
 
 	public static void main(String[] args) 
 	{

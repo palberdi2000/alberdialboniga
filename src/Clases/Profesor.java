@@ -20,7 +20,7 @@ public class Profesor extends Persona {
 	}
 	
 	/**
-	 * Constructor
+	 * Constructor de Profesor
 	 * 
 	 * @param nombre del objeto Persona
 	 * @param apellido del objeto Persona
@@ -34,10 +34,17 @@ public class Profesor extends Persona {
 		this.asigImpartida=asigImpartida;
 		
 	}
+	/**
+	 * Obtener la asignatura que imparte
+	 * @return asigImpartida
+	 */
 
 	public String getAsigImpartida() {
 		return asigImpartida;
 	}
+	/**
+	 * Definir la asignatura que imparte el profesor
+	 */
 
 	public void setAsigImpartida(String asigImpartida) {
 		this.asigImpartida = asigImpartida;

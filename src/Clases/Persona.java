@@ -32,29 +32,39 @@ public abstract class Persona {
 		this.apellido=apellido;
 		this.telefono=telefono;
 	}
+	
+	/**
+	 * Obtener el Nombre de la persona
+	 * @return nombre
+	 */
 
 	public String getNombre() {
 		return nombre;
 	}
+	
+	/**
+	 * Definir el nombre de la persona
+	 */
 
 	public void setNombre(String nombre) {
 		this.nombre = nombre;
 	}
 
+	/**
+	 * Obtener el apellido de la persona
+	 * @return apellido
+	 */
+	
 	public String getApellido() {
 		return apellido;
 	}
 
+	/**
+	 * Definir el apellido de la persona
+	 */
+	
 	public void setApellido(String apellido) {
 		this.apellido = apellido;
-	}
-
-	public int getTelefono() {
-		return telefono;
-	}
-
-	public void setTelefono(int telefono) {
-		this.telefono = telefono;
 	}
 
 	

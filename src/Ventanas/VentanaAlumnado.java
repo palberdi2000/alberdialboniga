@@ -31,7 +31,7 @@ public class VentanaAlumnado extends JFrame {
 
 
 	/**
-	 * Create the frame.
+	 * Distribucion de la ventana
 	 */
 	public VentanaAlumnado(JFrame ventanaAnterior) {
 		setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);

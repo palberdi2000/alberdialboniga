@@ -19,7 +19,12 @@ public class Alumno extends Persona implements IComparable{
 		
 	}
 	
-	
+	/**
+	 * Constructor de alumno
+	 * @param idAlumno identificador del alumno
+	 * @param nombre del alumno
+	 * @param apellido del alumno
+	 */
 	public Alumno(int idAlumno, String nombre, String apellido) {
 		super(nombre, apellido, 0);
 		this.idAlumno = idAlumno;
@@ -60,15 +65,16 @@ public class Alumno extends Persona implements IComparable{
 		this.asigMatriculada = asigMatriculada;
 	}
 	
-/*
+/**
  * Metodo para obtener el numero de faltas del alumno
+ * @return numeroFaltas del alumno
  */
 
 	public int getNumeroFaltas() {
 		return numeroFaltas;
 	}
 	
-/*
+/**
  * Metodo para asignar el numero de faltas al alumno	
  */
 
@@ -76,23 +82,7 @@ public class Alumno extends Persona implements IComparable{
 		this.numeroFaltas = numeroFaltas;
 	}
 
-/*
- * Metodo para obtener la asignatura del alumno
- */
-	
-	public int getNota() {
-		return nota;
-	}
-
-/*
- * 
- */
-
-	public void setNota(int nota) {
-		this.nota = nota;
-	}
-
-/*
+/**
  * Metodo para mostrar aviso de que el alumno ha faltado 5 veces o mas a clase
  */
 	
@@ -114,7 +104,7 @@ public class Alumno extends Persona implements IComparable{
 	public String toString() {
 		return super.getNombre() + " " + super.getApellido();
 	}
-
+	
 
 	@Override
 	public int value() {
