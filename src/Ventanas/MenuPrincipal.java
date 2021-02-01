@@ -71,6 +71,17 @@ public class MenuPrincipal extends JFrame {
 		});
 		btnAlumado.setBounds(123, 110, 169, 29);
 		contentPane.add(btnAlumado);
+		
+		JButton btnNewButton = new JButton("Nuevo alumno");
+		btnNewButton.addActionListener(new ActionListener() {
+			public void actionPerformed(ActionEvent arg0) {
+				MenuPrincipal.this.setVisible(false);
+				VentanaNuevoAlumno vent=new VentanaNuevoAlumno(MenuPrincipal.this);
+				vent.setVisible(true);
+				
+			}
+		});
+		btnNewButton.setBounds(147, 158, 117, 29);
+		contentPane.add(btnNewButton);
 	}
-
 }

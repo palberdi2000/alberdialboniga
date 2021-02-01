@@ -44,31 +44,58 @@ public class Alumno extends Persona implements IComparable{
 		this.nota=nota;
 	}
 	
-
+/*
+ * Metodo para obtener la asignatura del alumno
+ */
+	
 	public String getAsigMatriculada() {
 		return asigMatriculada;
 	}
 
+/*
+ * Metodo para asignar la asignatura al alumno	
+ */
+	
 	public void setAsigMatriculada(String asigMatriculada) {
 		this.asigMatriculada = asigMatriculada;
 	}
+	
+/*
+ * Metodo para obtener el numero de faltas del alumno
+ */
 
 	public int getNumeroFaltas() {
 		return numeroFaltas;
 	}
+	
+/*
+ * Metodo para asignar el numero de faltas al alumno	
+ */
 
 	public void setNumeroFaltas(int numeroFaltas) {
 		this.numeroFaltas = numeroFaltas;
 	}
 
+/*
+ * Metodo para obtener la asignatura del alumno
+ */
+	
 	public int getNota() {
 		return nota;
 	}
+
+/*
+ * 
+ */
 
 	public void setNota(int nota) {
 		this.nota = nota;
 	}
 
+/*
+ * Metodo para mostrar aviso de que el alumno ha faltado 5 veces o mas a clase
+ */
+	
 	public boolean aviso()
 	{
 		if(numeroFaltas>=5)

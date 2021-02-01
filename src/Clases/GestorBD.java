@@ -72,7 +72,7 @@ public class GestorBD {
     public static boolean nuevoUsuario(String email, String password) {
     	boolean operacionCompletada = false;
     	try {
-			PreparedStatement pstmt = conn.prepareStatement("INSERT INTO USUARIO(?,?)");
+			PreparedStatement pstmt = conn.prepareStatement("INSERT INTO USUARIO VALUES (?,?)");
 			pstmt.setString(0, email);
 			pstmt.setString(1, password);
 			pstmt.execute();
@@ -170,4 +170,21 @@ public class GestorBD {
 		}
 		return alumnos;
     }
-}
+    
+    public static void nuevoAlumno(int id,String nombre, String apellido, String curso) {
+    	
+    	try {
+			PreparedStatement pstmt = conn.prepareStatement("INSERT INTO ALUMNO VALUES (?,?,?,?)");
+			pstmt.setInt(1, id);
+			pstmt.setString(2, nombre);
+			pstmt.setString(3, apellido);
+			pstmt.setString(4, curso);
+			pstmt.execute();
+			
+		} catch (SQLException e) {
+			// TODO Auto-generated catch block
+			e.printStackTrace();
+		}
+    	
+    	}
+ }
