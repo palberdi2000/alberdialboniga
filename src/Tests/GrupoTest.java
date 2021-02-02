@@ -23,7 +23,7 @@ public class GrupoTest {
 	private Alumno a;
 	private Profesor p;
 	
-	/*
+	/**
 	 * definimos y añadimos a las listas
 	 */
 	@Before

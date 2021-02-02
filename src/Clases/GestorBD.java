@@ -191,6 +191,56 @@ public class GestorBD {
 			// TODO Auto-generated catch block
 			e.printStackTrace();
 		}
+    }
+    	/**
+    	 * Metodo para eliminar alumno del listado de la academia
+    	 * @param idAlumnoElim identificador del alumno eliminado
+    	 */
+    public static void eliminarAlumno(int idAlumnoElim) {
     	
-    	}
+			PreparedStatement pstmt;
+			try {
+				pstmt = conn.prepareStatement("DELETE FROM ALUMNO WHERE ID_ALUMN0=?");
+				pstmt.setInt(1, idAlumnoElim);
+				pstmt.execute();
+				    
+			} catch (SQLException e) {
+				// TODO Auto-generated catch block
+				e.printStackTrace();
+			}
+			
+    
+    }
+    
+    /**
+	 * Metodo para eliminar alumno del grupo
+	 * @param idAlumnoElim identificador del alumno eliminado del grupo
+	 */
+    public static void eliminarAlumnoPorGrupo(int idAlumnoElim) {
+	
+		PreparedStatement pstmt;
+		try {
+			pstmt = conn.prepareStatement("DELETE FROM ALUMNO_GRUPO WHERE ID_ALUMN0=?");
+			pstmt.setInt(1, idAlumnoElim);
+			pstmt.execute();
+			    
+		} catch (SQLException e) {
+			// TODO Auto-generated catch block
+			e.printStackTrace();
+		}
+	
+}
+public static void nuevoAlumnoEnGrupo(int idgrupo,int alumno) {
+    	
+    	try {
+			PreparedStatement pstmt = conn.prepareStatement("INSERT INTO ALUMNO_GRUPO VALUES (?,?)");
+			pstmt.setInt(1, alumno);
+			pstmt.setInt(2, idgrupo);
+			pstmt.execute();
+			
+		} catch (SQLException e) {
+			// TODO Auto-generated catch block
+			e.printStackTrace();
+		}
+    }
  }

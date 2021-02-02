@@ -49,7 +49,7 @@ public class Alumno extends Persona implements IComparable{
 		this.nota=nota;
 	}
 	
-/*
+/**
  * Metodo para obtener la asignatura del alumno
  */
 	
@@ -57,7 +57,7 @@ public class Alumno extends Persona implements IComparable{
 		return asigMatriculada;
 	}
 
-/*
+/**
  * Metodo para asignar la asignatura al alumno	
  */
 	

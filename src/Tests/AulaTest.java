@@ -16,7 +16,7 @@ import Clases.Aula;
  */
 public class AulaTest {
 	/**
-	 * aula a testear
+	 * aula sobre la cual vamos a  testear
 	 */
 	private Aula aula1;
 		
@@ -75,8 +75,5 @@ public class AulaTest {
 		public void setCapacidadTest() {
 			aula1.setCapacidad(3);
 			assertEquals(3,aula1.getCapacidad());
-		}
-		
-		
-		
+		}	
 }

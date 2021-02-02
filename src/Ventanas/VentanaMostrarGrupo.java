@@ -32,6 +32,7 @@ public class VentanaMostrarGrupo extends JFrame {
 
 	private JPanel contentPane;
 	private JTextField txtNumGrupo;
+	private JTextField textnuevoAlum;
 
 	/**
 	 * Launch the application.
@@ -70,13 +71,22 @@ public class VentanaMostrarGrupo extends JFrame {
 		contentPane.add(txtNumGrupo);
 		txtNumGrupo.setColumns(10);
 		
-		final JList listAlumGrupo = new JList();
-		listAlumGrupo.setBounds(79, 75, 288, 161);
-		contentPane.add(listAlumGrupo);
+		textnuevoAlum = new JTextField();
+		textnuevoAlum.setBounds(159, 240, 130, 26);
+		contentPane.add(textnuevoAlum);
+		textnuevoAlum.setColumns(10);
 		
+		JLabel lblNewLabel = new JLabel("IdAlumno:");
+		lblNewLabel.setBounds(82, 242, 65, 16);
+		contentPane.add(lblNewLabel);
+		
+		final JList listAlumGrupo = new JList();
+		listAlumGrupo.setBounds(30, 75, 288, 124);
+		contentPane.add(listAlumGrupo);
+		String text = txtNumGrupo.getText();
 		JButton btnMostrar = new JButton("Mostrar");
 		btnMostrar.addActionListener(e -> {			//LAMBDA
-				String text = txtNumGrupo.getText();
+				
 				if(text.equals("")) {
 					JOptionPane("RELLENE TEXTO");
 				} else {
@@ -93,6 +103,23 @@ public class VentanaMostrarGrupo extends JFrame {
 		});
 		btnMostrar.setBounds(287, 22, 115, 29);
 		contentPane.add(btnMostrar);
+		
+		JButton btnEliminar = new JButton("Eliminar");
+		btnEliminar.setBounds(333, 117, 117, 29);
+		contentPane.add(btnEliminar);
+		
+		JButton btnAñadir = new JButton("Añadir");
+		btnAñadir.addActionListener(new ActionListener() {
+			public void actionPerformed(ActionEvent arg0) {
+				int grupo = Integer.parseInt(text);
+				int alum= Integer.parseInt(textnuevoAlum.getText());
+				GestorBD.nuevoAlumnoEnGrupo(alum, grupo);
+			}
+		});
+		btnAñadir.setBounds(287, 240, 117, 29);
+		contentPane.add(btnAñadir);
+		
+		
 		
 	}
 
