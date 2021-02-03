@@ -39,7 +39,7 @@ public class Mergesort {								//MERGESORT
 				array.add(leftArray.get(0));
 				leftArray.remove(0);
 			}
-		}
+		}	
 		
 		while(leftArray.size() != 0) {
 			array.add(leftArray.get(0));

@@ -196,12 +196,14 @@ public class GestorBD {
     	 * Metodo para eliminar alumno del listado de la academia
     	 * @param idAlumnoElim identificador del alumno eliminado
     	 */
-    public static void eliminarAlumno(int idAlumnoElim) {
+    public static void eliminarAlumno(String nombre,String apellido) {
     	
 			PreparedStatement pstmt;
 			try {
-				pstmt = conn.prepareStatement("DELETE FROM ALUMNO WHERE ID_ALUMN0=?");
-				pstmt.setInt(1, idAlumnoElim);
+				pstmt = conn.prepareStatement("DELETE FROM ALUMNO WHERE NOMBRE=? AND APELLIDO=?");
+				pstmt.setString(1, nombre);
+				pstmt.setString(2, apellido);
+				
 				pstmt.execute();
 				    
 			} catch (SQLException e) {
@@ -230,6 +232,12 @@ public class GestorBD {
 		}
 	
 }
+    
+    /**
+     * Metodo para añadir un alumno al grupo
+     * @param idgrupo grupo al que vamos a añadir el alumno
+     * @param alumno alumno que queremos añadir 
+     */
 public static void nuevoAlumnoEnGrupo(int idgrupo,int alumno) {
     	
     	try {

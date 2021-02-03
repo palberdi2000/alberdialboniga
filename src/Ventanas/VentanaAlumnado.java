@@ -28,7 +28,7 @@ import java.awt.event.ActionEvent;
 public class VentanaAlumnado extends JFrame {
 
 	private JPanel contentPane;
-
+	private JList listaAlumnado;
 
 	/**
 	 * Distribucion de la ventana
@@ -48,13 +48,13 @@ public class VentanaAlumnado extends JFrame {
 		
 		ArrayList<Alumno> listaAlumnos = GestorBD.getAlumnos();
 		listaAlumnos = Mergesort.mergesort(listaAlumnos);
-		DefaultListModel<String> model = new DefaultListModel<String>();
+		DefaultListModel<Alumno> model = new DefaultListModel<Alumno>();
 		for (int i = 0; i < listaAlumnos.size(); i++)
 		{
-			model.add(i, listaAlumnos.get(i).toString());
+			model.add(i, listaAlumnos.get(i));
 		}
 
-		JList listaAlumnado = new JList(model);
+		listaAlumnado = new JList(model);
 		listaAlumnado.setBounds(54, 65, 322, 151);
 		contentPane.add(listaAlumnado);
 		
@@ -66,6 +66,17 @@ public class VentanaAlumnado extends JFrame {
 		});
 		retroceder.setBounds(304, 228, 117, 29);
 		contentPane.add(retroceder);
+		
+		JButton btnNewButton = new JButton("Eliminar Alumno");
+		btnNewButton.addActionListener(new ActionListener() {
+			public void actionPerformed(ActionEvent arg0) {
+				Alumno x=(Alumno) listaAlumnado.getSelectedValue();
+				GestorBD.eliminarAlumno(x.getNombre(), x.getApellido());
+				
+			}
+		});
+		btnNewButton.setBounds(63, 228, 148, 29);
+		contentPane.add(btnNewButton); 
 		
 		
 	}
