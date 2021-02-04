@@ -43,7 +43,7 @@ public class AulaTest {
 		}
 		}
 		
-		/*
+		/**
 		 * Testeo del metodo getAula()
 		 */
 		@Test
@@ -52,7 +52,7 @@ public class AulaTest {
 			assertEquals(1,aula1.getNumAula());
 		}
 		
-		/*
+		/**
 		 * Testeo del metodo setAula()
 		 */
 		@Test
@@ -61,14 +61,14 @@ public class AulaTest {
 			assertEquals(2,aula1.getNumAula());
 		}
 		
-		/*
+		/**
 		 * testeo del metodo getCapacidad()
 		 */
 		@Test
 		public void getCapacidadTest() {
 			assertEquals(16,aula1.getCapacidad());
 		}
-		/*
+		/**
 		 * testeo del metodo setCapacidad()
 		 */
 		@Test
