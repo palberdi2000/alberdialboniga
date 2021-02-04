@@ -218,12 +218,13 @@ public class GestorBD {
 	 * Metodo para eliminar alumno del grupo
 	 * @param idAlumnoElim identificador del alumno eliminado del grupo
 	 */
-    public static void eliminarAlumnoPorGrupo(int idAlumnoElim) {
+    public static void eliminarAlumnoPorGrupo(String nombreAlumnoElim, String apellidoAlumnoElim) {
 	
 		PreparedStatement pstmt;
 		try {
-			pstmt = conn.prepareStatement("DELETE FROM ALUMNO_GRUPO WHERE ID_ALUMN0=?");
-			pstmt.setInt(1, idAlumnoElim);
+			pstmt = conn.prepareStatement("DELETE FROM ALUMNO WHERE NOMBRE=? AND APELLIDO=?");
+			pstmt.setString (1, nombreAlumnoElim);
+			pstmt.setString(2, apellidoAlumnoElim);
 			pstmt.execute();
 			    
 		} catch (SQLException e) {

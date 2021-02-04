@@ -105,6 +105,12 @@ public class VentanaMostrarGrupo extends JFrame {
 		contentPane.add(btnMostrar);
 		
 		JButton btnEliminar = new JButton("Eliminar");
+		btnEliminar.addActionListener(new ActionListener() {
+			public void actionPerformed(ActionEvent arg0) {
+				Alumno x=(Alumno) listAlumGrupo.getSelectedValue();
+				GestorBD.eliminarAlumnoPorGrupo(x.getNombre(), x.getApellido());
+			}
+		});
 		btnEliminar.setBounds(333, 117, 117, 29);
 		contentPane.add(btnEliminar);
 		
